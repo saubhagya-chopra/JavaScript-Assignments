@@ -26,9 +26,17 @@
 */
 
 function countVowels(str) {
-  // Your code here
+  let vowel_count = 0;
+  for (let i = 0; i < str.length; i++) {
+    let current_char = str.charAt(i);
+    if (current_char == 'a' || current_char == 'e' || current_char == 'i' || current_char == 'o' || current_char == 'u' || current_char == 'A' || current_char == 'E' || current_char == 'I' || current_char == 'O' || current_char == 'U') {
+      vowel_count++;
+    }
+  }
+  return vowel_count;
 }
 
+// console.log(countVowels("saubhagya"));
 module.exports = { countVowels };
 
 

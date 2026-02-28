@@ -25,8 +25,27 @@
   - `npm run test-perfect`
 */
 
-function isPerfectNumber(num) {
-  // Your code here
+function check(arr, num) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return (sum === num) ? true : false;
 }
+
+function isPerfectNumber(num) {
+  let result = [];
+  for (let i = 1; i < num; i++){
+    if (num % i == 0) {
+      result.push(i);
+    }
+  }
+  console.log(result);
+  
+  return check(result, num);
+}
+
+console.log(isPerfectNumber(1));
+
 
 module.exports = { isPerfectNumber };

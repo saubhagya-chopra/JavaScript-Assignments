@@ -22,6 +22,25 @@
 */
 function compression(str) {
   // Your code here
+  let ans = "";
+  for (let i = 0; i < str.length; i++){
+    let counter = 1, isPresent = true;
+    while (i < str.length && str[i] == str[i + 1]) {
+      counter++;
+      i++;
+    }
+    if (counter > 1) {
+      ans += (str[i]);
+      ans += (counter);
+    }
+    else {
+      ans += (str[i]);
+    }
+  }
+  return ans;
 }
+
+console.log(compression("aabbcc"));
+
 
 module.exports = compression;

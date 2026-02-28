@@ -20,6 +20,18 @@
 
 function getUniqueElements(arr) {
   // Your code here
+  let set = new Set();
+  let result = [];
+  for (let i = 0; i < arr.length; i++){
+    if (!set.has(arr[i])) {
+      set.add(arr[i]);
+      result.push(arr[i]);
+    }
+  }
+  return result;
 }
+
+console.log(getUniqueElements([10, 20, 30, 10, 40, 20]));
+
 
 module.exports = getUniqueElements;

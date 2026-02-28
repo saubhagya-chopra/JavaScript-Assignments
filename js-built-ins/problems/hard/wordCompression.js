@@ -24,7 +24,24 @@
 
 function compressWords(arr) {
   // Your code here
+  let result = [];
+  for (let i = 0; i < arr.length; i++){
+    let counter = 1;
+    while (i < arr.length && arr[i] == arr[i + 1]) {
+      counter++;
+      i++;
+    }
+    if (counter > 1) {
+      result.push(arr[i] + counter);
+    }
+    else {
+      result.push(arr[i]);      
+    }
+  }
+  return result;
 }
+
+console.log(compressWords(["apple", "apple", "banana", "banana", "banana", "cherry", "apple", "apple"]));
 
 
 module.exports = compressWords;

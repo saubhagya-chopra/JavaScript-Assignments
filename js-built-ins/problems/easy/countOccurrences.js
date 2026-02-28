@@ -20,8 +20,20 @@
 
 
 function countOccurrences(arr) {
-  // Your code here
+  let result = {};
+  for (let i = 0; i < arr.length; i++) {
+    if (result[arr[i]] >= 1) {
+      result[arr[i]]++;
+    }
+    else {
+      result[arr[i]] = 1;
+    }
+  }
+  return result;
 }
+
+console.log(countOccurrences([1, 2, 3, 1, 2, 1]));
+
 
 module.exports = countOccurrences;
 

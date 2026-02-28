@@ -21,6 +21,29 @@
   - `npm run test-nonrepeat`
 */
 function nonrepeat(str) {
-  // Your code here
+  if (str == " ") {
+    return null;
+  }
+  const mp1 = new Map();
+  for (let i = 0; i < str.length; i++) {
+    if (!mp1.has(str[i])) {
+      mp1.set(str[i], 1);
+      // console.log(mp1.get(str[i]));
+    }
+    else {
+      mp1.set(str[i], mp1.get(str[i]) + 1);
+    }
+  }
+  // console.log(mp1);
+  for (const [key, value] of mp1) {
+    if (value == 1) {
+      return key;
+      break;
+    }
+  }
+
 }
+
+console.log(nonrepeat(" "));
+
 module.exports = nonrepeat;
